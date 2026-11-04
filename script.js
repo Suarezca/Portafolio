@@ -1,18 +1,23 @@
 (() => {
 
-  /* =================================================
-     PALABRAS DINÁMICAS DEL HERO
-  ================================================= */
+  /* =========================================
+     HERO DYNAMIC TEXT
+  ========================================== */
 
   const dynamicWord =
-    document.getElementById("dynamicWord");
+    document.getElementById(
+      "dynamicWord"
+    );
 
 
   const words = [
+
     "automatización.",
     "eficiencia.",
     "integración.",
+    "soluciones.",
     "resultados."
+
   ];
 
 
@@ -51,9 +56,9 @@
 
 
 
-  /* =================================================
+  /* =========================================
      REVEAL ON SCROLL
-  ================================================= */
+  ========================================== */
 
   const reveals =
     document.querySelectorAll(
@@ -74,47 +79,54 @@
 
     const observer =
       new IntersectionObserver(
+
         (entries, obs) => {
 
-          entries.forEach((entry) => {
+          entries.forEach(
+            (entry) => {
 
-            if (
-              entry.isIntersecting
-            ) {
+              if (
+                entry.isIntersecting
+              ) {
 
-              entry.target.classList.add(
-                "visible"
-              );
-
-
-              obs.unobserve(
                 entry.target
-              );
+                  .classList
+                  .add("visible");
+
+
+                obs.unobserve(
+                  entry.target
+                );
+
+              }
 
             }
-
-          });
+          );
 
         },
+
         {
           threshold: 0.1
         }
+
       );
 
 
-    reveals.forEach((item) => {
+    reveals.forEach(
+      (item) => {
 
-      observer.observe(item);
+        observer.observe(item);
 
-    });
+      }
+    );
 
   }
 
 
 
-  /* =================================================
+  /* =========================================
      PROJECT DETAILS
-  ================================================= */
+  ========================================== */
 
   const toggles =
     document.querySelectorAll(
@@ -122,49 +134,62 @@
     );
 
 
-  toggles.forEach((toggle) => {
+  toggles.forEach(
+    (toggle) => {
 
-    toggle.addEventListener(
-      "click",
-      () => {
+      toggle.addEventListener(
+        "click",
 
-        const container =
-          toggle.closest(
-            ".case-card, .featured-project"
+        () => {
+
+          const container =
+            toggle.closest(
+              ".case-card, .featured-project"
+            );
+
+
+          if (!container) {
+            return;
+          }
+
+
+          const detail =
+            container.querySelector(
+              ".case-detail"
+            );
+
+
+          if (!detail) {
+            return;
+          }
+
+
+          const expanded =
+            toggle.getAttribute(
+              "aria-expanded"
+            ) === "true";
+
+
+          toggle.setAttribute(
+            "aria-expanded",
+            String(!expanded)
           );
 
 
-        const detail =
-          container.querySelector(
-            ".case-detail"
-          );
+          detail.hidden =
+            expanded;
 
+        }
+      );
 
-        const expanded =
-          toggle.getAttribute(
-            "aria-expanded"
-          ) === "true";
-
-
-        toggle.setAttribute(
-          "aria-expanded",
-          String(!expanded)
-        );
-
-
-        detail.hidden =
-          expanded;
-
-      }
-    );
-
-  });
+    }
+  );
 
 
 
-  /* =================================================
-     CARD TILT
-  ================================================= */
+  /* =========================================
+     SUBTLE TILT EFFECT
+  ========================================== */
 
   const tiltCards =
     document.querySelectorAll(
@@ -180,79 +205,85 @@
 
   if (supportsHover) {
 
-    tiltCards.forEach((card) => {
+    tiltCards.forEach(
+      (card) => {
 
-      card.addEventListener(
-        "mousemove",
-        (event) => {
+        card.addEventListener(
+          "mousemove",
 
-          const rect =
-            card.getBoundingClientRect();
+          (event) => {
 
-
-          const x =
-            event.clientX
-            - rect.left;
+            const rect =
+              card.getBoundingClientRect();
 
 
-          const y =
-            event.clientY
-            - rect.top;
+            const x =
+              event.clientX
+              - rect.left;
 
 
-          const centerX =
-            rect.width / 2;
+            const y =
+              event.clientY
+              - rect.top;
 
 
-          const centerY =
-            rect.height / 2;
+            const centerX =
+              rect.width / 2;
 
 
-          const rotateY =
-            (
-              (x - centerX)
-              / centerX
-            ) * 1.2;
+            const centerY =
+              rect.height / 2;
 
 
-          const rotateX =
-            (
-              (centerY - y)
-              / centerY
-            ) * 1.2;
+            const rotateY =
+              (
+                (x - centerX)
+                / centerX
+              ) * 1.1;
 
 
-          card.style.transform =
-            `
-              perspective(1000px)
-              rotateX(${rotateX}deg)
-              rotateY(${rotateY}deg)
-              translateY(-2px)
-            `;
-
-        }
-      );
+            const rotateX =
+              (
+                (centerY - y)
+                / centerY
+              ) * 1.1;
 
 
-      card.addEventListener(
-        "mouseleave",
-        () => {
+            card.style.transform =
+              `
+                perspective(1000px)
+                rotateX(${rotateX}deg)
+                rotateY(${rotateY}deg)
+                translateY(-2px)
+              `;
 
-          card.style.transform =
-            "";
+          }
 
-        }
-      );
+        );
 
-    });
+
+        card.addEventListener(
+          "mouseleave",
+
+          () => {
+
+            card.style.transform =
+              "";
+
+          }
+
+        );
+
+      }
+    );
 
   }
 
 
 
-  /* =================================================
+  /* =========================================
      ACTIVE NAVIGATION
-  ================================================= */
+  ========================================== */
 
   const navLinks =
     document.querySelectorAll(
@@ -262,6 +293,7 @@
 
   const sections =
     [...navLinks]
+
       .map((link) => {
 
         const id =
@@ -275,67 +307,76 @@
         );
 
       })
+
       .filter(Boolean);
 
 
   if (
     sections.length
-    && "IntersectionObserver" in window
+    &&
+    "IntersectionObserver" in window
   ) {
 
     const navObserver =
       new IntersectionObserver(
+
         (entries) => {
 
-          entries.forEach((entry) => {
+          entries.forEach(
+            (entry) => {
 
-            if (
-              entry.isIntersecting
-            ) {
+              if (
+                entry.isIntersecting
+              ) {
 
-              navLinks.forEach(
-                (link) => {
+                navLinks.forEach(
+                  (link) => {
 
-                  link.classList.remove(
+                    link.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+                const active =
+                  document.querySelector(
+                    `.nav a[href="#${entry.target.id}"]`
+                  );
+
+
+                if (active) {
+
+                  active.classList.add(
                     "active"
                   );
 
                 }
-              );
-
-
-              const active =
-                document.querySelector(
-                  `.nav a[href="#${entry.target.id}"]`
-                );
-
-
-              if (active) {
-
-                active.classList.add(
-                  "active"
-                );
 
               }
 
             }
-
-          });
+          );
 
         },
+
         {
           threshold: 0.35
         }
+
       );
 
 
-    sections.forEach((section) => {
+    sections.forEach(
+      (section) => {
 
-      navObserver.observe(
-        section
-      );
+        navObserver.observe(
+          section
+        );
 
-    });
+      }
+    );
 
   }
 
