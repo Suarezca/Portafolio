@@ -1,2041 +1,628 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta
     name="description"
-    content="Portafolio profesional de Carolina Suárez, Ingeniera de Sistemas con experiencia en RPA, Hyperautomation, Automation Anywhere, Ansible/AWX, Python y automatización de procesos."
-  >
+    content="Portafolio profesional de Carolina Suárez, Ingeniera de Sistemas con experiencia en RPA, Hyperautomation, Automation Anywhere, Ansible, Python y automatización de procesos."
+  />
+  <meta name="theme-color" content="#0b0b0f" />
+  <title>Carolina Suárez | RPA Developer</title>
 
-  <meta
-    name="theme-color"
-    content="#0b0a0d"
-  >
-
-  <title>
-    Carolina Suárez | RPA & Hyperautomation
-  </title>
-
-  <link
-    rel="icon"
-    type="image/svg+xml"
-    href="favicon.svg"
-  >
-
-  <link
-    rel="alternate icon"
-    href="favicon.ico"
-  >
-
-  <link
-    rel="apple-touch-icon"
-    href="apple-touch-icon.png"
-  >
-
-  <link
-    rel="stylesheet"
-    href="styles.css"
-  >
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body>
 
+  <div class="site-noise"></div>
+  <div class="site-gradient"></div>
+
   <header class="header">
-
-    <a
-      href="#inicio"
-      class="brand"
-      aria-label="Ir al inicio"
-    >
-
-      <div
-        class="brand-bot mini-bot"
-        aria-hidden="true"
-      >
-
-        <span class="bot-antenna"></span>
-
-        <div class="bot-head">
-          <i></i>
-          <i></i>
-          <b></b>
+    <div class="container header-wrap">
+      <a href="#inicio" class="brand">
+        <div class="brand-mark">
+          <div class="brand-bot">
+            <span class="brand-antenna"></span>
+            <div class="brand-face">
+              <i></i>
+              <i></i>
+              <b></b>
+            </div>
+          </div>
         </div>
 
-      </div>
-
-      <div class="brand-copy">
-
-        <strong>
-          Carolina Suárez
-        </strong>
-
-        <small>
-          RPA · Hyperautomation
-        </small>
-
-      </div>
-
-    </a>
-
-
-    <nav
-      class="nav"
-      aria-label="Navegación principal"
-    >
-
-      <a href="#sobre-mi">
-        Sobre mí
+        <div class="brand-copy">
+          <strong>Carolina Suárez</strong>
+          <small>RPA · Hyperautomation</small>
+        </div>
       </a>
 
-      <a href="#stack">
-        Stack
-      </a>
+      <nav class="nav" aria-label="principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#stack">Stack</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-      <a href="#proyectos">
-        Proyectos
-      </a>
-
-      <a href="#flujo">
-        Flujo
-      </a>
-
-      <a href="#experiencia">
-        Experiencia
-      </a>
-
-    </nav>
-
-
-    <div class="header-actions">
-
-      <a
-        class="header-contact"
-        href="#contacto"
-      >
-        Contacto
-      </a>
-
-      <button
-        class="menu-button"
-        id="menuButton"
-        type="button"
-        aria-label="Abrir menú"
-        aria-expanded="false"
-      >
-
+      <button id="menuButton" class="menu-button" type="button" aria-label="Abrir menú">
         <span></span>
         <span></span>
-
       </button>
-
     </div>
 
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#stack">Stack</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </div>
   </header>
-
-
-  <div
-    class="mobile-menu"
-    id="mobileMenu"
-    aria-hidden="true"
-  >
-
-    <nav>
-
-      <a href="#sobre-mi">
-        Sobre mí
-      </a>
-
-      <a href="#stack">
-        Stack
-      </a>
-
-      <a href="#proyectos">
-        Proyectos
-      </a>
-
-      <a href="#flujo">
-        Flujo
-      </a>
-
-      <a href="#experiencia">
-        Experiencia
-      </a>
-
-      <a href="#contacto">
-        Contacto
-      </a>
-
-    </nav>
-
-  </div>
-
-
 
   <main>
 
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
 
-    <!-- =========================
-         HERO
-    ========================== -->
+        <div class="hero-copy reveal">
+          <span class="eyebrow">PORTAFOLIO PROFESIONAL · AUTOMATIZACIÓN</span>
 
-    <section
-      class="hero container"
-      id="inicio"
-    >
+          <h1>
+            CAROLINA
+            <span>SUÁREZ</span>
+          </h1>
 
-      <div class="hero-copy reveal">
+          <div class="hero-role">
+            <span>RPA Developer</span>
+            <i>/</i>
+            <span>Hyperautomation</span>
+            <i>/</i>
+            <span id="dynamicWord">Automation Anywhere</span>
+          </div>
 
-        <span class="hero-label">
-          RPA DEVELOPER · HYPERAUTOMATION
-        </span>
+          <p class="hero-text">
+            Ingeniera de Sistemas con experiencia en desarrollo de automatizaciones,
+            integración de sistemas, procesamiento de datos y soporte productivo.
+            He participado en el ciclo completo de automatización, desde el análisis
+            del proceso hasta su implementación y seguimiento en producción.
+          </p>
 
+          <div class="hero-actions">
+            <a href="#proyectos" class="btn btn-primary">Ver proyectos</a>
+            <a href="#contacto" class="btn btn-secondary">Contactarme</a>
+          </div>
 
-        <h1>
+          <div class="hero-mini-stats">
+            <article>
+              <strong>3+</strong>
+              <span>Años de experiencia</span>
+            </article>
 
-          Carolina
+            <article>
+              <strong>E2E</strong>
+              <span>Ciclo completo de automatización</span>
+            </article>
 
-          <span>
-            Suárez.
-          </span>
-
-        </h1>
-
-
-        <p class="hero-role">
-
-          Desarrollo automatizaciones que conectan
-
-          <strong id="dynamicWord">
-            procesos.
-          </strong>
-
-        </p>
-
-
-        <p class="hero-description">
-
-          Ingeniera de Sistemas con experiencia en
-
-          <b>
-            RPA, scripting, automatización de infraestructura,
-            integración de sistemas y procesamiento de datos.
-          </b>
-
-          He participado desde el análisis del proceso hasta
-          su implementación y soporte en producción.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-          <a
-            href="#proyectos"
-            class="button button-primary"
-          >
-            Ver proyectos
-          </a>
-
-
-          <a
-            href="#contacto"
-            class="button button-secondary"
-          >
-            Contactarme
-          </a>
-
+            <article>
+              <strong>L1</strong>
+              <span>Soporte y monitoreo productivo</span>
+            </article>
+          </div>
         </div>
 
+        <div class="hero-visual reveal">
+          <div class="hero-panel">
+            <div class="panel-label top-left">AUTOMATION SYSTEM</div>
+            <div class="panel-label top-right">ONLINE</div>
 
-        <div class="hero-stack">
+            <div class="visual-orbit orbit-one"></div>
+            <div class="visual-orbit orbit-two"></div>
 
-          <div>
-            <img
-              src="assets/icons/automation-anywhere.svg"
-              alt="Automation Anywhere"
-            >
+            <div class="visual-card visual-card-left top">
+              <img src="assets/icons/excel.svg" alt="Excel" />
+              <span>Excel</span>
+            </div>
 
-            <span>
-              Automation Anywhere
-            </span>
+            <div class="visual-card visual-card-left bottom">
+              <img src="assets/icons/automation-anywhere.svg" alt="Automation Anywhere" />
+              <span>RPA</span>
+            </div>
+
+            <div class="visual-card visual-card-right top">
+              <img src="assets/icons/ansible.svg" alt="Ansible" />
+              <span>Ansible</span>
+            </div>
+
+            <div class="visual-card visual-card-right middle">
+              <img src="assets/icons/api.svg" alt="REST API" />
+              <span>REST API</span>
+            </div>
+
+            <div class="visual-card visual-card-right bottom">
+              <img src="assets/icons/powerbi.svg" alt="Power BI" />
+              <span>Power BI</span>
+            </div>
+
+            <div class="robot-core">
+              <span class="robot-antenna-line"></span>
+              <span class="robot-antenna-dot"></span>
+
+              <div class="robot-head">
+                <i></i>
+                <i></i>
+                <b></b>
+              </div>
+
+              <div class="robot-body">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <svg class="hero-flow" viewBox="0 0 700 520" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M138 140 C230 150, 255 180, 306 212" />
+              <path d="M138 358 C230 342, 255 312, 306 284" />
+              <path d="M394 212 C466 186, 482 138, 562 140" />
+              <path d="M394 248 C470 248, 492 248, 592 248" />
+              <path d="M394 284 C465 312, 486 356, 562 358" />
+            </svg>
+
+            <div class="hero-flow-footer">
+              <span>INPUT</span>
+              <i>•</i>
+              <span>PROCESS</span>
+              <i>•</i>
+              <span>RULES</span>
+              <i>•</i>
+              <span>OUTPUT</span>
+            </div>
           </div>
-
-
-          <div>
-            <img
-              src="assets/icons/ansible.svg"
-              alt="Ansible"
-            >
-
-            <span>
-              Ansible / AWX
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/python.svg"
-              alt="Python"
-            >
-
-            <span>
-              Python
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/selenium.svg"
-              alt="Selenium"
-            >
-
-            <span>
-              Selenium
-            </span>
-          </div>
-
         </div>
 
       </div>
-
-
-
-      <!-- AUTOMATION VISUAL -->
-
-      <div
-        class="automation-panel reveal"
-        id="automationPanel"
-      >
-
-        <div class="panel-head">
-
-          <span>
-            AUTOMATION FLOW
-          </span>
-
-          <strong>
-            <i></i>
-            RUNNING
-          </strong>
-
-        </div>
-
-
-        <div class="automation-stage">
-
-
-          <!-- INPUT -->
-
-          <div
-            class="flow-node flow-input"
-            data-flow="0"
-          >
-
-            <img
-              src="assets/icons/excel.svg"
-              alt="Excel"
-            >
-
-            <div>
-
-              <small>
-                01
-              </small>
-
-              <strong>
-                Input
-              </strong>
-
-              <span>
-                Data
-              </span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- PROCESS -->
-
-          <div
-            class="flow-node flow-process"
-            data-flow="1"
-          >
-
-            <img
-              src="assets/icons/automation-anywhere.svg"
-              alt="Automation Anywhere"
-            >
-
-            <div>
-
-              <small>
-                02
-              </small>
-
-              <strong>
-                Process
-              </strong>
-
-              <span>
-                RPA
-              </span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- BOT -->
-
-          <div
-            class="main-bot"
-            aria-hidden="true"
-          >
-
-            <span class="main-antenna"></span>
-            <span class="main-antenna-dot"></span>
-
-            <div class="main-head">
-
-              <i></i>
-              <i></i>
-
-              <b></b>
-
-            </div>
-
-
-            <div class="main-body">
-
-              <span></span>
-              <span></span>
-              <span></span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- VALIDATE -->
-
-          <div
-            class="flow-node flow-validate"
-            data-flow="2"
-          >
-
-            <div class="diamond">
-              ◇
-            </div>
-
-            <div>
-
-              <small>
-                03
-              </small>
-
-              <strong>
-                Validate
-              </strong>
-
-              <span>
-                Rules
-              </span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- INTEGRATE -->
-
-          <div
-            class="flow-node flow-integrate"
-            data-flow="3"
-          >
-
-            <img
-              src="assets/icons/api.svg"
-              alt="REST API"
-            >
-
-            <div>
-
-              <small>
-                04
-              </small>
-
-              <strong>
-                Integrate
-              </strong>
-
-              <span>
-                APIs
-              </span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- OUTPUT -->
-
-          <div
-            class="flow-node flow-output"
-            data-flow="4"
-          >
-
-            <img
-              src="assets/icons/powerbi.svg"
-              alt="Power BI"
-            >
-
-            <div>
-
-              <small>
-                05
-              </small>
-
-              <strong>
-                Output
-              </strong>
-
-              <span>
-                BI / Reports
-              </span>
-
-            </div>
-
-          </div>
-
-
-
-          <!-- CONNECTIONS -->
-
-          <svg
-            class="flow-connections"
-            viewBox="0 0 600 410"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-
-            <path
-              d="M130 90 C220 90 210 170 275 185"
-            />
-
-            <path
-              d="M130 320 C215 320 210 255 275 235"
-            />
-
-            <path
-              d="M330 185 C405 165 405 90 480 90"
-            />
-
-            <path
-              d="M345 210 C420 210 420 210 500 210"
-            />
-
-            <path
-              d="M330 235 C405 255 405 320 480 320"
-            />
-
-          </svg>
-
-        </div>
-
-
-        <div class="panel-foot">
-
-          <span>
-            INPUT
-          </span>
-
-          <i>→</i>
-
-          <span>
-            PROCESS
-          </span>
-
-          <i>→</i>
-
-          <span>
-            VALIDATE
-          </span>
-
-          <i>→</i>
-
-          <span>
-            OUTPUT
-          </span>
-
-        </div>
-
-      </div>
-
     </section>
 
+    <!-- SOBRE MI -->
+    <section class="section" id="sobre-mi">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-number">01</div>
+          <div>
+            <span class="section-kicker">SOBRE MÍ</span>
+            <h2>Automatización con visión técnica e integral.</h2>
+          </div>
+        </div>
 
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              Soy <strong>Ingeniera de Sistemas</strong> graduada de la
+              <strong>Universidad Simón Bolívar</strong>, con experiencia en
+              automatización de procesos empresariales mediante RPA, scripting
+              e integración de tecnologías.
+            </p>
 
-    <!-- =========================
-         SUMMARY
-    ========================== -->
+            <p>
+              Mi experiencia principal se ha desarrollado con
+              <strong>Automation Anywhere, Ansible, Python y Selenium</strong>,
+              así como con herramientas de datos, plataformas empresariales y
+              ambientes de desarrollo y producción.
+            </p>
 
-    <section class="summary container reveal">
+            <p>
+              También he participado en levantamiento de requerimientos, análisis,
+              desarrollo, pruebas, documentación, despliegue y soporte,
+              aportando soluciones que optimizan tareas operativas y mejoran la
+              eficiencia de los procesos.
+            </p>
+          </div>
 
-      <article>
+          <div class="about-side reveal">
+            <article class="about-side-card">
+              <span class="side-kicker">FORMACIÓN</span>
+              <h3>Ingeniería de Sistemas</h3>
+              <strong>Universidad Simón Bolívar · 2023</strong>
+              <p>
+                Minor en Ingeniería de Software y Gestión de la Tecnología de la Educación.
+              </p>
+            </article>
 
-        <strong>
-          3+
-        </strong>
-
-        <span>
-          años en automatización
-        </span>
-
-      </article>
-
-
-      <article>
-
-        <strong>
-          Ciclo completo
-        </strong>
-
-        <span>
-          análisis · desarrollo · producción
-        </span>
-
-      </article>
-
-
-      <article>
-
-        <strong>
-          DEV → PROD
-        </strong>
-
-        <span>
-          implementación
-        </span>
-
-      </article>
-
-
-      <article>
-
-        <strong>
-          L1
-        </strong>
-
-        <span>
-          soporte productivo
-        </span>
-
-      </article>
-
+            <article class="about-side-card">
+              <span class="side-kicker">ENFOQUE</span>
+              <ul>
+                <li>RPA y Hyperautomation</li>
+                <li>Automatización con Ansible</li>
+                <li>Procesamiento de datos</li>
+                <li>Integración entre sistemas</li>
+                <li>Soporte y continuidad operativa</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
     </section>
 
-
-
-    <!-- =========================
-         SOBRE MÍ
-    ========================== -->
-
-    <section
-      class="section container"
-      id="sobre-mi"
-    >
-
-      <div class="section-title reveal">
-
-        <span>
-          01
-        </span>
-
-        <div>
-
-          <small>
-            SOBRE MÍ
-          </small>
-
-          <h2>
-            Experiencia técnica con enfoque en automatización.
-          </h2>
-
+    <!-- STACK -->
+    <section class="section" id="stack">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-number">02</div>
+          <div>
+            <span class="section-kicker">STACK</span>
+            <h2>Tecnologías y herramientas.</h2>
+          </div>
         </div>
 
+        <div class="stack-layout">
+
+          <div class="stack-box reveal">
+            <div class="stack-title">
+              <span>PRINCIPAL</span>
+              <h3>Automatización</h3>
+            </div>
+
+            <div class="stack-grid">
+              <article>
+                <img src="assets/icons/automation-anywhere.svg" alt="Automation Anywhere">
+                <span>Automation Anywhere</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/ansible.svg" alt="Ansible">
+                <span>Ansible / AWX</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/python.svg" alt="Python">
+                <span>Python</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/selenium.svg" alt="Selenium">
+                <span>Selenium</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="stack-box reveal">
+            <div class="stack-title">
+              <span>DATA</span>
+              <h3>Bases de datos</h3>
+            </div>
+
+            <div class="stack-grid">
+              <article>
+                <img src="assets/icons/sqlserver.svg" alt="SQL Server">
+                <span>SQL Server</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/mysql.svg" alt="MySQL">
+                <span>MySQL</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/postgresql.svg" alt="PostgreSQL">
+                <span>PostgreSQL</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/json.svg" alt="JSON">
+                <span>JSON / XML</span>
+              </article>
+            </div>
+          </div>
+
+          <div class="stack-box wide reveal">
+            <div class="stack-title">
+              <span>ENTERPRISE</span>
+              <h3>Herramientas y plataformas</h3>
+            </div>
+
+            <div class="logo-cloud">
+              <article><img src="assets/icons/excel.svg" alt="Excel"><span>Excel</span></article>
+              <article><img src="assets/icons/powerbi.svg" alt="Power BI"><span>Power BI</span></article>
+              <article><img src="assets/icons/sharepoint.svg" alt="SharePoint"><span>SharePoint</span></article>
+              <article><img src="assets/icons/sap.svg" alt="SAP"><span>SAP</span></article>
+              <article><img src="assets/icons/azure-devops.svg" alt="Azure DevOps"><span>Azure DevOps</span></article>
+              <article><img src="assets/icons/git.svg" alt="Git"><span>Git</span></article>
+              <article><img src="assets/icons/api.svg" alt="REST APIs"><span>REST APIs</span></article>
+              <article><img src="assets/icons/instana.svg" alt="Instana"><span>Instana</span></article>
+              <article><img src="assets/icons/websphere.svg" alt="WebSphere"><span>WebSphere</span></article>
+              <article><img src="assets/icons/control-desk.svg" alt="Control Desk"><span>Control Desk</span></article>
+              <article><img src="assets/icons/vm.svg" alt="VMs y RDP"><span>VMs / RDP</span></article>
+              <article><img src="assets/icons/word.svg" alt="Word y PDF"><span>Word / PDF</span></article>
+            </div>
+          </div>
+
+          <div class="stack-box reveal">
+            <div class="stack-title">
+              <span>COMPLEMENTARIO</span>
+              <h3>Desarrollo</h3>
+            </div>
+
+            <div class="stack-grid">
+              <article>
+                <img src="assets/icons/java.svg" alt="Java">
+                <span>Java</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/spring.svg" alt="Spring Boot">
+                <span>Spring Boot</span>
+              </article>
+
+              <article>
+                <img src="assets/icons/angular.svg" alt="Angular">
+                <span>Angular</span>
+              </article>
+            </div>
+          </div>
+
+        </div>
       </div>
-
-
-      <div class="about-layout">
-
-        <div class="about-copy reveal">
-
-          <p>
-
-            Soy
-
-            <strong>
-              Ingeniera de Sistemas
-            </strong>
-
-            enfocada en automatización de procesos,
-            RPA y desarrollo de soluciones tecnológicas.
-
-          </p>
-
-
-          <p>
-
-            Mi experiencia se ha desarrollado principalmente con
-
-            <strong>
-              Automation Anywhere, Python, Selenium,
-              Ansible/AWX, bases de datos e integración
-              entre diferentes sistemas.
-            </strong>
-
-          </p>
-
-
-          <p>
-
-            He trabajado en análisis, desarrollo, pruebas,
-            documentación, despliegue y soporte de
-            automatizaciones en ambientes empresariales.
-
-          </p>
-
-        </div>
-
-
-
-        <div class="education reveal">
-
-          <span class="education-label">
-            FORMACIÓN
-          </span>
-
-          <h3>
-            Universidad Simón Bolívar
-          </h3>
-
-          <strong>
-            Ingeniería de Sistemas · 2023
-          </strong>
-
-          <p>
-            Minor en Ingeniería de Software y Gestión de
-            la Tecnología de la Educación.
-          </p>
-
-        </div>
-
-      </div>
-
     </section>
 
-
-
-    <!-- =========================
-         STACK
-    ========================== -->
-
-    <section
-      class="section container"
-      id="stack"
-    >
-
-      <div class="section-title reveal">
-
-        <span>
-          02
-        </span>
-
-        <div>
-
-          <small>
-            STACK
-          </small>
-
-          <h2>
-            Tecnologías y herramientas.
-          </h2>
-
+    <!-- PROYECTOS -->
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-number">03</div>
+          <div>
+            <span class="section-kicker">PROYECTOS</span>
+            <h2>Experiencias de automatización destacadas.</h2>
+            <p class="section-subtext">
+              Los proyectos se presentan de forma general para proteger información interna.
+            </p>
+          </div>
         </div>
 
-      </div>
+        <div class="featured-project reveal">
+          <div class="featured-left">
+            <span class="featured-tag">PROYECTO DESTACADO</span>
+            <h3>Automatización híbrida de capacidad</h3>
 
+            <p>
+              Solución desarrollada con <strong>Ansible</strong> y
+              <strong>Automation Anywhere</strong> para recolectar información
+              desde múltiples servidores, procesarla y consolidarla para su uso
+              en reportes y tableros operativos.
+            </p>
 
+            <div class="featured-flow">
+              <span>Servidores</span>
+              <i>→</i>
+              <span>Ansible / AWX</span>
+              <i>→</i>
+              <span>JSON</span>
+              <i>→</i>
+              <span>Automation Anywhere</span>
+              <i>→</i>
+              <span>Excel / Power BI</span>
+            </div>
+          </div>
 
-      <div class="stack-block reveal">
-
-        <div class="stack-block-title">
-
-          <strong>
-            Experiencia principal
-          </strong>
-
-          <span>
-            Automatización · Infraestructura · Desarrollo
-          </span>
-
+          <div class="featured-right">
+            <div class="featured-metrics">
+              <article>
+                <strong>Infra + RPA</strong>
+                <span>Arquitectura híbrida</span>
+              </article>
+              <article>
+                <strong>E2E</strong>
+                <span>Análisis a implementación</span>
+              </article>
+              <article>
+                <strong>Business</strong>
+                <span>Enfoque operativo</span>
+              </article>
+            </div>
+          </div>
         </div>
 
+        <div class="projects-grid">
 
-        <div class="core-stack">
-
-
-          <article>
-
-            <img
-              src="assets/icons/automation-anywhere.svg"
-              alt="Automation Anywhere"
-            >
-
-            <div>
-
-              <strong>
-                Automation Anywhere
-              </strong>
-
-              <span>
-                RPA Development
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">01</span>
+            <small>RPA · REPORTING</small>
+            <h3>Informe mensual de operación</h3>
+            <p>
+              Automatización para recopilar y consolidar información operativa
+              desde múltiples fuentes, generando entregables de reporte.
+            </p>
+            <div class="project-flow">
+              <span>Power BI</span><i>→</i><span>Automation Anywhere</span><i>→</i><span>Word / PDF</span>
             </div>
-
           </article>
 
-
-          <article>
-
-            <img
-              src="assets/icons/ansible.svg"
-              alt="Ansible"
-            >
-
-            <div>
-
-              <strong>
-                Ansible / AWX
-              </strong>
-
-              <span>
-                Infrastructure Automation
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">02</span>
+            <small>MONITOREO</small>
+            <h3>Reporte mensual de servicios Amdocs Weblogic</h3>
+            <p>
+              Navegación automatizada, captura de información y construcción
+              de reportes a partir de datos del entorno de monitoreo.
+            </p>
+            <div class="project-flow">
+              <span>Instana</span><i>→</i><span>Automation Anywhere</span><i>→</i><span>Word</span>
             </div>
-
           </article>
 
-
-          <article>
-
-            <img
-              src="assets/icons/python.svg"
-              alt="Python"
-            >
-
-            <div>
-
-              <strong>
-                Python
-              </strong>
-
-              <span>
-                Scripting & Automation
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">03</span>
+            <small>INFRASTRUCTURE</small>
+            <h3>Limpieza de volcado de memoria y reinicio WAS</h3>
+            <p>
+              Automatización orientada a tareas operativas y de continuidad en
+              entornos WebSphere, con validaciones y recuperación controlada.
+            </p>
+            <div class="project-flow">
+              <span>Validación</span><i>→</i><span>Ansible</span><i>→</i><span>WebSphere</span>
             </div>
-
           </article>
 
-
-          <article>
-
-            <img
-              src="assets/icons/selenium.svg"
-              alt="Selenium"
-            >
-
-            <div>
-
-              <strong>
-                Selenium
-              </strong>
-
-              <span>
-                Web Automation
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">04</span>
+            <small>ANSIBLE</small>
+            <h3>Modificación de automatización de mantes intermedios</h3>
+            <p>
+              Mejora de una automatización existente para soportar ejecución
+              sobre múltiples perfiles y ampliar su alcance operativo.
+            </p>
+            <div class="project-flow">
+              <span>Profiles</span><i>→</i><span>Ansible</span><i>→</i><span>Logs</span>
             </div>
-
           </article>
 
-
-          <article>
-
-            <img
-              src="assets/icons/sqlserver.svg"
-              alt="SQL Server"
-            >
-
-            <div>
-
-              <strong>
-                SQL Server
-              </strong>
-
-              <span>
-                Data Processing
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">05</span>
+            <small>RPA + DATA</small>
+            <h3>Insumos para tablero de capacidad del servicio</h3>
+            <p>
+              Procesamiento de archivos, actualización de estructuras de datos
+              y preparación de insumos para visualización en tableros.
+            </p>
+            <div class="project-flow">
+              <span>Excel</span><i>→</i><span>Automation Anywhere</span><i>→</i><span>Power BI</span>
             </div>
-
           </article>
 
-
-          <article>
-
-            <img
-              src="assets/icons/mysql.svg"
-              alt="MySQL"
-            >
-
-            <div>
-
-              <strong>
-                MySQL
-              </strong>
-
-              <span>
-                Database
-              </span>
-
+          <article class="project-card reveal">
+            <span class="project-index">06</span>
+            <small>PYTHON · SELENIUM</small>
+            <h3>Proyecto de prácticas con Python</h3>
+            <p>
+              Desarrollo de automatización web con Python y Selenium,
+              integrando extracción de información y uso de base de datos.
+            </p>
+            <div class="project-flow">
+              <span>Python</span><i>→</i><span>Selenium</span><i>→</i><span>MySQL</span>
             </div>
-
           </article>
 
         </div>
-
       </div>
-
-
-
-      <div class="stack-block reveal">
-
-        <div class="stack-block-title">
-
-          <strong>
-            Enterprise & Integration
-          </strong>
-
-          <span>
-            Datos · BI · Operación
-          </span>
-
-        </div>
-
-
-        <div class="tools-grid">
-
-          <div>
-            <img
-              src="assets/icons/excel.svg"
-              alt="Excel"
-            >
-
-            <span>
-              Excel
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/powerbi.svg"
-              alt="Power BI"
-            >
-
-            <span>
-              Power BI
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/sharepoint.svg"
-              alt="SharePoint"
-            >
-
-            <span>
-              SharePoint
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/sap.svg"
-              alt="SAP"
-            >
-
-            <span>
-              SAP
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/azure-devops.svg"
-              alt="Azure DevOps"
-            >
-
-            <span>
-              Azure DevOps
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/git.svg"
-              alt="Git"
-            >
-
-            <span>
-              Git
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/api.svg"
-              alt="REST APIs"
-            >
-
-            <span>
-              REST APIs
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/json.svg"
-              alt="JSON"
-            >
-
-            <span>
-              JSON
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/xml.svg"
-              alt="XML"
-            >
-
-            <span>
-              XML
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/instana.svg"
-              alt="IBM Instana"
-            >
-
-            <span>
-              IBM Instana
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/websphere.svg"
-              alt="IBM WebSphere"
-            >
-
-            <span>
-              IBM WebSphere
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/control-desk.svg"
-              alt="Control Desk"
-            >
-
-            <span>
-              Control Desk
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/vm.svg"
-              alt="VMs y RDP"
-            >
-
-            <span>
-              VMs / RDP
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/word.svg"
-              alt="Word"
-            >
-
-            <span>
-              Word / PDF
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-
-      <div class="stack-block reveal">
-
-        <div class="stack-block-title">
-
-          <strong>
-            Conocimientos complementarios
-          </strong>
-
-          <span>
-            Desarrollo de software
-          </span>
-
-        </div>
-
-
-        <div class="tools-grid compact-tools">
-
-          <div>
-            <img
-              src="assets/icons/java.svg"
-              alt="Java"
-            >
-
-            <span>
-              Java
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/spring.svg"
-              alt="Spring Boot"
-            >
-
-            <span>
-              Spring Boot
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/angular.svg"
-              alt="Angular"
-            >
-
-            <span>
-              Angular
-            </span>
-          </div>
-
-
-          <div>
-            <img
-              src="assets/icons/postgresql.svg"
-              alt="PostgreSQL"
-            >
-
-            <span>
-              PostgreSQL
-            </span>
-          </div>
-
-        </div>
-
-      </div>
-
     </section>
 
-
-
-    <!-- =========================
-         PROJECTS
-    ========================== -->
-
-    <section
-      class="section container"
-      id="proyectos"
-    >
-
-      <div class="section-title reveal">
-
-        <span>
-          03
-        </span>
-
-        <div>
-
-          <small>
-            PROYECTOS
-          </small>
-
-          <h2>
-            Una selección de automatizaciones desarrolladas.
-          </h2>
-
-          <p>
-            Los casos están generalizados para proteger
-            información confidencial.
-          </p>
-
+    <!-- EXPERIENCIA -->
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-number">04</div>
+          <div>
+            <span class="section-kicker">EXPERIENCIA</span>
+            <h2>Trayectoria profesional.</h2>
+          </div>
         </div>
 
-      </div>
+        <div class="timeline">
 
-
-
-      <!-- FEATURED -->
-
-      <article class="featured-project reveal">
-
-        <div class="featured-index">
-          01
-        </div>
-
-
-        <div class="featured-content">
-
-          <small>
-            AUTOMATIZACIÓN HÍBRIDA
-          </small>
-
-          <h3>
-            Capacidad de infraestructura
-          </h3>
-
-
-          <p>
-            Solución que combina automatización de
-            infraestructura y RPA para recopilar,
-            transformar y consolidar métricas de capacidad.
-          </p>
-
-
-          <div class="featured-flow">
-
-            <div>
-
-              <img
-                src="assets/icons/ansible.svg"
-                alt="Ansible"
-              >
-
-              <span>
-                Ansible / AWX
-              </span>
-
+          <article class="timeline-item reveal">
+            <div class="timeline-year">
+              <span>2023</span>
+              <small>Actualidad</small>
             </div>
 
-            <i>
-              →
-            </i>
+            <div class="timeline-content">
+              <span class="timeline-tag">ACTUAL</span>
+              <h3>DS Specialist · DS Hyperautomation</h3>
+              <strong>GBM</strong>
 
+              <p>
+                Desarrollo e implementación de automatizaciones para procesos
+                empresariales, integrando RPA, automatización con Ansible,
+                archivos de alta data, bases de datos, APIs y plataformas corporativas.
+              </p>
 
-            <div>
+              <ul>
+                <li>Automation Anywhere y Ansible / AWX.</li>
+                <li>Excel, SQL/MySQL, APIs, SharePoint, SAP y Power BI.</li>
+                <li>Pruebas, documentación y salida a producción.</li>
+                <li>Soporte L1, monitoreo de ejecuciones e incidentes.</li>
+                <li>Análisis de logs y seguimiento de tickets.</li>
+              </ul>
+            </div>
+          </article>
 
-              <img
-                src="assets/icons/json.svg"
-                alt="JSON"
-              >
-
-              <span>
-                JSON
-              </span>
-
+          <article class="timeline-item reveal">
+            <div class="timeline-year">
+              <span>2023</span>
+              <small>Prácticas</small>
             </div>
 
-            <i>
-              →
-            </i>
-
-
-            <div>
-
-              <img
-                src="assets/icons/automation-anywhere.svg"
-                alt="Automation Anywhere"
-              >
-
-              <span>
-                Automation Anywhere
-              </span>
-
-            </div>
-
-            <i>
-              →
-            </i>
-
-
-            <div>
-
-              <img
-                src="assets/icons/powerbi.svg"
-                alt="Power BI"
-              >
-
-              <span>
-                Excel / Power BI
-              </span>
-
-            </div>
-
-          </div>
-
-
-          <button
-            class="project-toggle"
-            type="button"
-            aria-expanded="false"
-          >
-            Ver detalle
-            <span>+</span>
-          </button>
-
-
-          <div
-            class="project-detail"
-            hidden
-          >
-
-            <p>
-              La información se encuentra distribuida en
-              múltiples servidores. Ansible/AWX se utiliza
-              como capa técnica de extracción, mientras
-              Automation Anywhere ejecuta el procesamiento
-              orientado al negocio.
-            </p>
-
-            <strong>
-              Participación: desarrollo completo de ambas capas.
-            </strong>
-
-          </div>
-
-        </div>
-
-      </article>
-
-
-
-      <div class="project-list">
-
-
-        <article class="project-item reveal">
-
-          <span class="project-number">
-            02
-          </span>
-
-
-          <div class="project-info">
-
-            <small>
-              RPA · REPORTING
-            </small>
-
-            <h3>
-              Informe operativo mensual
-            </h3>
-
-            <p>
-              Consolidación automatizada de información
-              proveniente de dashboards, aplicaciones web
-              y archivos Excel.
-            </p>
-
-          </div>
-
-
-          <div class="project-mini-flow">
-
-            <span>
-              Power BI
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Automation Anywhere
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Word
-            </span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project-item reveal">
-
-          <span class="project-number">
-            03
-          </span>
-
-
-          <div class="project-info">
-
-            <small>
-              MONITORING · RPA
-            </small>
-
-            <h3>
-              Reportes de monitoreo
-            </h3>
-
-            <p>
-              Automatización de navegación,
-              captura de evidencias y generación de reportes.
-            </p>
-
-          </div>
-
-
-          <div class="project-mini-flow">
-
-            <span>
-              Instana
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Automation Anywhere
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Word
-            </span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project-item reveal">
-
-          <span class="project-number">
-            04
-          </span>
-
-
-          <div class="project-info">
-
-            <small>
-              INFRASTRUCTURE
-            </small>
-
-            <h3>
-              Mantenimiento WebSphere
-            </h3>
-
-            <p>
-              Validaciones, limpieza controlada,
-              gestión de procesos y recuperación
-              automatizada de servicios.
-            </p>
-
-          </div>
-
-
-          <div class="project-mini-flow">
-
-            <span>
-              Validate
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Ansible
-            </span>
-
-            <i>→</i>
-
-            <span>
-              WebSphere
-            </span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project-item reveal">
-
-          <span class="project-number">
-            05
-          </span>
-
-
-          <div class="project-info">
-
-            <small>
-              ANSIBLE
-            </small>
-
-            <h3>
-              Automatización multiperfil
-            </h3>
-
-            <p>
-              Evolución de un mantenimiento existente para
-              procesar dinámicamente múltiples perfiles.
-            </p>
-
-          </div>
-
-
-          <div class="project-mini-flow">
-
-            <span>
-              Profiles
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Ansible
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Logs
-            </span>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="project-item reveal">
-
-          <span class="project-number">
-            06
-          </span>
-
-
-          <div class="project-info">
-
-            <small>
-              PYTHON · SELENIUM
-            </small>
-
-            <h3>
-              Database Automation Bot
-            </h3>
-
-            <p>
-              Automatización desarrollada durante mis
-              prácticas para ejecutar tareas relacionadas
-              con bases de datos y plataformas web.
-            </p>
-
-          </div>
-
-
-          <div class="project-mini-flow">
-
-            <span>
-              Python
-            </span>
-
-            <i>→</i>
-
-            <span>
-              Selenium
-            </span>
-
-            <i>→</i>
-
-            <span>
-              MySQL
-            </span>
-
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         FLOW
-    ========================== -->
-
-    <section
-      class="section container"
-      id="flujo"
-    >
-
-      <div class="section-title reveal">
-
-        <span>
-          04
-        </span>
-
-        <div>
-
-          <small>
-            CICLO DE AUTOMATIZACIÓN
-          </small>
-
-          <h2>
-            Del requerimiento a producción.
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div
-        class="lifecycle reveal"
-        id="lifecycle"
-      >
-
-        <div class="lifecycle-line">
-          <span id="lifecycleProgress"></span>
-        </div>
-
-
-        <article>
-
-          <span>
-            01
-          </span>
-
-          <i></i>
-
-          <strong>
-            Requerimiento
-          </strong>
-
-          <small>
-            Entender el proceso
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            02
-          </span>
-
-          <i></i>
-
-          <strong>
-            Análisis
-          </strong>
-
-          <small>
-            Reglas e integraciones
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            03
-          </span>
-
-          <i></i>
-
-          <strong>
-            Desarrollo
-          </strong>
-
-          <small>
-            Bot · Script · Playbook
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            04
-          </span>
-
-          <i></i>
-
-          <strong>
-            Pruebas
-          </strong>
-
-          <small>
-            Validaciones
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            05
-          </span>
-
-          <i></i>
-
-          <strong>
-            Producción
-          </strong>
-
-          <small>
-            Implementación
-          </small>
-
-        </article>
-
-
-        <article>
-
-          <span>
-            06
-          </span>
-
-          <i></i>
-
-          <strong>
-            Soporte
-          </strong>
-
-          <small>
-            Monitoreo e incidentes
-          </small>
-
-        </article>
-
-      </div>
-
-    </section>
-
-
-
-    <!-- =========================
-         EXPERIENCE
-    ========================== -->
-
-    <section
-      class="section container"
-      id="experiencia"
-    >
-
-      <div class="section-title reveal">
-
-        <span>
-          05
-        </span>
-
-        <div>
-
-          <small>
-            EXPERIENCIA
-          </small>
-
-          <h2>
-            Mi evolución profesional.
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="experience-list">
-
-
-        <article class="experience-item reveal">
-
-          <div class="experience-date">
-
-            <span>
-              Sep 2023
-            </span>
-
-            <small>
-              Actualidad
-            </small>
-
-          </div>
-
-
-          <div class="experience-content">
-
-            <span class="current-label">
-              ACTUAL
-            </span>
-
-            <h3>
-              DS Specialist · DS Hyperautomation
-            </h3>
-
-            <strong>
-              GBM
-            </strong>
-
-
-            <p>
-              Desarrollo e implementación de soluciones
-              de automatización utilizando RPA, scripting,
-              orquestación de infraestructura e integración
-              de sistemas.
-            </p>
-
-
-            <ul>
-
-              <li>
+            <div class="timeline-content">
+              <span class="timeline-tag alt">PRÁCTICAS</span>
+              <h3>Practicante · Hyperautomation</h3>
+              <strong>GBM</strong>
+
+              <p>
+                Etapa de formación y práctica donde adquirí conocimiento sobre
+                automatización de procesos mediante bots, utilizando Python junto
+                con la librería Selenium, además de fortalecer mi formación en
                 Automation Anywhere.
-              </li>
+              </p>
 
-              <li>
-                Ansible / AWX.
-              </li>
+              <ul>
+                <li>Automatización web con Python y Selenium.</li>
+                <li>Extracción y gestión de información.</li>
+                <li>Integración con base de datos.</li>
+                <li>Manejo de errores, pruebas y documentación.</li>
+              </ul>
+            </div>
+          </article>
 
-              <li>
-                Excel, SQL, APIs, SharePoint y Power BI.
-              </li>
-
-              <li>
-                Pruebas, documentación y producción.
-              </li>
-
-              <li>
-                Soporte L1 y monitoreo.
-              </li>
-
-              <li>
-                Análisis de logs e incidentes.
-              </li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
-
-
-        <article class="experience-item reveal">
-
-          <div class="experience-date">
-
-            <span>
-              Mar 2023
-            </span>
-
-            <small>
-              Ago 2023
-            </small>
-
-          </div>
-
-
-          <div class="experience-content">
-
-            <span class="intern-label">
-              PRÁCTICAS
-            </span>
-
-            <h3>
-              Practicante · Hyperautomation
-            </h3>
-
-            <strong>
-              GBM
-            </strong>
-
-
-            <p>
-              Inicio de mi experiencia profesional
-              desarrollando una solución de automatización
-              con Python y Selenium.
-            </p>
-
-
-            <ul>
-
-              <li>
-                Desarrollo con Python y Selenium.
-              </li>
-
-              <li>
-                Automatización web.
-              </li>
-
-              <li>
-                Consultas y rutinas SQL.
-              </li>
-
-              <li>
-                Logs y validaciones.
-              </li>
-
-              <li>
-                Manejo de errores.
-              </li>
-
-              <li>
-                Pruebas y documentación.
-              </li>
-
-            </ul>
-
-          </div>
-
-        </article>
-
+        </div>
       </div>
-
     </section>
 
+    <!-- CONTACTO -->
+    <section class="section contact-section" id="contacto">
+      <div class="container">
+        <div class="contact-box reveal">
+          <span class="section-kicker">CONTACTO</span>
+          <h2>Disponible para nuevas oportunidades profesionales.</h2>
 
+          <p>
+            Este portafolio reúne una muestra de mi experiencia y proyectos en automatización.
+            Si mi perfil se alinea con una oportunidad, con gusto puedo compartir información
+            adicional sobre mi trayectoria profesional.
+          </p>
 
-    <!-- =========================
-         CONTACT
-    ========================== -->
+          <div class="contact-actions">
+            <a
+              href="mailto:carolinasuarez0112@hotmail.com?subject=Contacto%20profesional%20-%20Portafolio%20Carolina%20Suarez"
+              class="btn btn-primary"
+            >
+              Contactarme por correo
+            </a>
 
-    <section
-      class="contact container reveal"
-      id="contacto"
-    >
-
-      <span>
-        CONTACTO
-      </span>
-
-
-      <h2>
-        Abierta a conocer nuevas
-        <strong>
-          oportunidades profesionales.
-        </strong>
-      </h2>
-
-
-      <p>
-        Este portafolio reúne una muestra de mi experiencia,
-        evolución técnica y proyectos de automatización.
-        Si mi perfil resulta de interés para una oportunidad
-        profesional, estaré encantada de conversar y compartir
-        información adicional sobre mi trayectoria.
-      </p>
-
-
-      <div class="contact-actions">
-
-        <a
-          href="mailto:carolinasuarez0112@hotmail.com?subject=Contacto%20profesional%20-%20Portafolio%20Carolina%20Suarez"
-          class="button button-primary"
-        >
-          Contactarme
-        </a>
-
-
-        <a
-          href="mailto:carolinasuarez0112@hotmail.com?subject=Solicitud%20de%20hoja%20de%20vida%20-%20Carolina%20Suarez"
-          class="button button-secondary"
-        >
-          Solicitar hoja de vida
-        </a>
-
+            <a
+              href="mailto:carolinasuarez0112@hotmail.com?subject=Solicitud%20de%20informaci%C3%B3n%20profesional%20-%20Carolina%20Suarez"
+              class="btn btn-secondary"
+            >
+              Solicitar más información
+            </a>
+          </div>
+        </div>
       </div>
-
     </section>
 
   </main>
 
-
-
-  <footer class="footer container">
-
-    <span>
-      Carolina Suárez
-    </span>
-
-    <span>
-      RPA Developer · Hyperautomation
-    </span>
-
-    <span>
-      Barranquilla, Colombia
-    </span>
-
+  <footer class="footer">
+    <div class="container footer-wrap">
+      <span>Carolina Suárez</span>
+      <span>RPA Developer · Hyperautomation</span>
+      <span>Barranquilla, Colombia</span>
+    </div>
   </footer>
 
-
   <script src="script.js"></script>
-
 </body>
 </html>
