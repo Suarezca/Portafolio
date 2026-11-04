@@ -1,470 +1,374 @@
 (() => {
-  const loader = document.getElementById('loader');
 
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      loader?.classList.add('hide');
-    }, 260);
-  });
+  /* =====================================
+     HERO WORD
+  ====================================== */
 
-
-  const progress = document.getElementById('pageProgress');
-
-  const updateProgress = () => {
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const value = max > 0 ? (window.scrollY / max) * 100 : 0;
-
-    if (progress) {
-      progress.style.width = `${value}%`;
-    }
-  };
-
-  window.addEventListener('scroll', updateProgress, {
-    passive: true
-  });
-
-  updateProgress();
+  const dynamicWord =
+    document.getElementById(
+      "dynamicWord"
+    );
 
 
   const words = [
-    'automatización.',
-    'eficiencia.',
-    'integración.',
-    'soluciones.',
-    'resultados.'
+    "procesos.",
+    "datos.",
+    "sistemas.",
+    "infraestructura.",
+    "soluciones."
   ];
 
-  const dynamic = document.getElementById('dynamicWord');
 
   let wordIndex = 0;
 
-  if (dynamic) {
+
+  if (dynamicWord) {
+
     setInterval(() => {
-      dynamic.classList.add('changing');
+
+      dynamicWord.classList.add(
+        "changing"
+      );
+
 
       setTimeout(() => {
+
         wordIndex =
           (wordIndex + 1)
           % words.length;
 
-        dynamic.textContent =
+
+        dynamicWord.textContent =
           words[wordIndex];
 
-        dynamic.classList.remove('changing');
-      }, 220);
-    }, 2700);
+
+        dynamicWord.classList.remove(
+          "changing"
+        );
+
+      }, 180);
+
+    }, 2800);
+
   }
 
 
-  const reveals =
-    document.querySelectorAll('.reveal');
 
-  if ('IntersectionObserver' in window) {
-    reveals.forEach((element) => {
-      element.classList.add('reveal-ready');
-    });
+  /* =====================================
+     REVEAL
+  ====================================== */
+
+  const revealElements =
+    document.querySelectorAll(
+      ".reveal"
+    );
+
+
+  if (
+    "IntersectionObserver"
+    in window
+  ) {
+
+    revealElements.forEach(
+      (element) => {
+
+        element.classList.add(
+          "reveal-ready"
+        );
+
+      }
+    );
+
 
     const revealObserver =
       new IntersectionObserver(
+
         (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-              return;
-            }
 
-            entry.target.classList.add('visible');
+          entries.forEach(
+            (entry) => {
 
-            observer.unobserve(
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
+
+
               entry.target
-            );
-          });
+                .classList
+                .add("visible");
+
+
+              observer.unobserve(
+                entry.target
+              );
+
+            }
+          );
+
         },
+
         {
-          threshold: 0.1
+          threshold: 0.12
         }
+
       );
 
-    reveals.forEach((element) => {
-      revealObserver.observe(element);
-    });
+
+    revealElements.forEach(
+      (element) => {
+
+        revealObserver.observe(
+          element
+        );
+
+      }
+    );
+
   }
 
 
+
+  /* =====================================
+     MOBILE MENU
+  ====================================== */
+
   const menuButton =
-    document.getElementById('menuButton');
+    document.getElementById(
+      "menuButton"
+    );
+
 
   const mobileMenu =
-    document.getElementById('mobileMenu');
+    document.getElementById(
+      "mobileMenu"
+    );
 
-  const closeMenu = () => {
-    menuButton?.classList.remove('open');
+
+  function closeMenu() {
+
+    menuButton?.classList.remove(
+      "open"
+    );
+
 
     menuButton?.setAttribute(
-      'aria-expanded',
-      'false'
+      "aria-expanded",
+      "false"
     );
 
-    mobileMenu?.classList.remove('open');
+
+    mobileMenu?.classList.remove(
+      "open"
+    );
+
 
     mobileMenu?.setAttribute(
-      'aria-hidden',
-      'true'
+      "aria-hidden",
+      "true"
     );
 
+
     document.body.classList.remove(
-      'menu-open'
+      "menu-open"
     );
-  };
+
+  }
 
 
   menuButton?.addEventListener(
-    'click',
+    "click",
+
     () => {
-      const isOpen =
-        !mobileMenu?.classList.contains('open');
+
+      const open =
+        !mobileMenu
+          ?.classList
+          .contains("open");
+
 
       menuButton.classList.toggle(
-        'open',
-        isOpen
+        "open",
+        open
       );
+
 
       menuButton.setAttribute(
-        'aria-expanded',
-        String(isOpen)
+        "aria-expanded",
+        String(open)
       );
+
 
       mobileMenu?.classList.toggle(
-        'open',
-        isOpen
+        "open",
+        open
       );
+
 
       mobileMenu?.setAttribute(
-        'aria-hidden',
-        String(!isOpen)
+        "aria-hidden",
+        String(!open)
       );
 
+
       document.body.classList.toggle(
-        'menu-open',
-        isOpen
+        "menu-open",
+        open
       );
+
     }
   );
 
 
   mobileMenu
-    ?.querySelectorAll('a')
-    .forEach((link) => {
-      link.addEventListener(
-        'click',
-        closeMenu
-      );
-    });
+    ?.querySelectorAll("a")
+    .forEach(
+      (link) => {
+
+        link.addEventListener(
+          "click",
+          closeMenu
+        );
+
+      }
+    );
 
 
-  document
-    .querySelectorAll('.case-toggle')
-    .forEach((button) => {
-      button.addEventListener(
-        'click',
-        () => {
-          const detail =
-            button.parentElement
-              ?.querySelector(
-                '.case-detail'
-              );
 
-          if (!detail) {
-            return;
-          }
+  /* =====================================
+     AUTOMATION FLOW
+  ====================================== */
 
-          const expanded =
-            button.getAttribute(
-              'aria-expanded'
-            ) === 'true';
-
-          button.setAttribute(
-            'aria-expanded',
-            String(!expanded)
-          );
-
-          detail.hidden =
-            expanded;
-        }
-      );
-    });
-
-
-  const workflowNodes =
+  const flowNodes =
     [
       ...document.querySelectorAll(
-        '[data-flow-step]'
+        "[data-flow]"
       )
     ];
 
-  let currentFlowStep = 0;
+
+  let flowIndex = 0;
 
 
-  const activateWorkflowStep = () => {
-    workflowNodes.forEach(
+  function updateFlow() {
+
+    flowNodes.forEach(
       (node, index) => {
+
         node.classList.toggle(
-          'active',
-          index === currentFlowStep
+          "active",
+          index === flowIndex
         );
+
       }
     );
 
-    currentFlowStep =
-      (currentFlowStep + 1)
-      % workflowNodes.length;
-  };
+
+    flowIndex =
+      (
+        flowIndex + 1
+      )
+      %
+      flowNodes.length;
+
+  }
 
 
-  if (workflowNodes.length) {
-    activateWorkflowStep();
+  if (flowNodes.length) {
+
+    updateFlow();
+
 
     setInterval(
-      activateWorkflowStep,
-      1300
+      updateFlow,
+      1400
     );
+
   }
 
 
-  const supportsHover =
-    window.matchMedia(
-      '(hover: hover)'
-    ).matches;
 
+  /* =====================================
+     PROJECT DETAIL
+  ====================================== */
 
-  if (supportsHover) {
-    document
-      .querySelectorAll('.tilt-card')
-      .forEach((card) => {
-        card.addEventListener(
-          'mousemove',
-          (event) => {
-            const rect =
-              card.getBoundingClientRect();
+  document
+    .querySelectorAll(
+      ".project-toggle"
+    )
+    .forEach(
+      (button) => {
 
-            const rotateX =
-              (
-                0.5
-                -
-                (
-                  event.clientY
-                  -
-                  rect.top
-                )
-                /
-                rect.height
-              )
-              * 2;
+        button.addEventListener(
+          "click",
 
-            const rotateY =
-              (
-                (
-                  event.clientX
-                  -
-                  rect.left
-                )
-                /
-                rect.width
-                -
-                0.5
-              )
-              * 2;
-
-            card.style.transform =
-              `
-                perspective(1000px)
-                rotateX(${rotateX}deg)
-                rotateY(${rotateY}deg)
-                translateY(-2px)
-              `;
-          }
-        );
-
-        card.addEventListener(
-          'mouseleave',
           () => {
-            card.style.transform = '';
-          }
-        );
-      });
+
+            const detail =
+              button
+                .parentElement
+                ?.querySelector(
+                  ".project-detail"
+                );
 
 
-    const scene =
-      document.getElementById(
-        'automationScene'
-      );
-
-
-    scene?.addEventListener(
-      'mousemove',
-      (event) => {
-        const rect =
-          scene.getBoundingClientRect();
-
-        const x =
-          (
-            (
-              event.clientX
-              -
-              rect.left
-            )
-            /
-            rect.width
-            -
-            0.5
-          )
-          * 8;
-
-        const y =
-          (
-            (
-              event.clientY
-              -
-              rect.top
-            )
-            /
-            rect.height
-            -
-            0.5
-          )
-          * 8;
-
-        scene.style.transform =
-          `
-            perspective(1100px)
-            rotateY(${x * 0.22}deg)
-            rotateX(${-y * 0.18}deg)
-          `;
-      }
-    );
-
-
-    scene?.addEventListener(
-      'mouseleave',
-      () => {
-        scene.style.transform = '';
-      }
-    );
-  }
-
-
-  const navLinks =
-    document.querySelectorAll('.nav a');
-
-
-  const navSections =
-    [...navLinks]
-      .map((link) =>
-        document.querySelector(
-          link.getAttribute('href')
-        )
-      )
-      .filter(Boolean);
-
-
-  if ('IntersectionObserver' in window) {
-    const navObserver =
-      new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
+            if (!detail) {
               return;
             }
 
-            navLinks.forEach((link) => {
-              link.classList.remove('active');
-            });
 
-            document
-              .querySelector(
-                `.nav a[href="#${entry.target.id}"]`
+            const expanded =
+              button.getAttribute(
+                "aria-expanded"
               )
-              ?.classList.add('active');
-          });
-        },
-        {
-          threshold: 0.28
-        }
-      );
-
-    navSections.forEach((section) => {
-      navObserver.observe(section);
-    });
-  }
+              ===
+              "true";
 
 
-  const experience =
-    document.querySelector(
-      '.experience'
-    );
+            button.setAttribute(
+              "aria-expanded",
+              String(!expanded)
+            );
 
-  const timelineProgress =
-    document.getElementById(
-      'timelineProgress'
+
+            detail.hidden =
+              expanded;
+
+          }
+        );
+
+      }
     );
 
 
-  const updateTimeline = () => {
-    if (
-      !experience
-      ||
-      !timelineProgress
-    ) {
-      return;
-    }
 
-    const rect =
-      experience.getBoundingClientRect();
-
-    const start =
-      window.innerHeight * 0.75;
-
-    const percentage =
-      Math.max(
-        0,
-        Math.min(
-          100,
-          (
-            (
-              start
-              -
-              rect.top
-            )
-            /
-            rect.height
-          )
-          * 135
-        )
-      );
-
-    timelineProgress.style.height =
-      `${percentage}%`;
-  };
-
+  /* =====================================
+     LIFECYCLE
+  ====================================== */
 
   const lifecycle =
     document.getElementById(
-      'lifecycleFlow'
+      "lifecycle"
     );
+
 
   const lifecycleProgress =
     document.getElementById(
-      'lifecycleProgress'
+      "lifecycleProgress"
     );
+
 
   const lifecycleSteps =
     [
       ...document.querySelectorAll(
-        '.lifecycle-step'
+        ".lifecycle article"
       )
     ];
 
 
-  const updateLifecycle = () => {
+  function updateLifecycle() {
+
     if (
       !lifecycle
       ||
@@ -473,15 +377,44 @@
       return;
     }
 
+
+    if (
+      window.innerWidth <= 980
+    ) {
+
+      lifecycleSteps.forEach(
+        (step) => {
+
+          step.classList.add(
+            "active"
+          );
+
+        }
+      );
+
+
+      lifecycleProgress.style.width =
+        "100%";
+
+
+      return;
+    }
+
+
     const rect =
-      lifecycle.getBoundingClientRect();
+      lifecycle
+        .getBoundingClientRect();
 
-    const viewportPoint =
-      window.innerHeight * 0.72;
 
-    const rawProgress =
+    const trigger =
+      window.innerHeight
+      *
+      0.7;
+
+
+    const raw =
       (
-        viewportPoint
+        trigger
         -
         rect.top
       )
@@ -491,22 +424,27 @@
         1
       );
 
+
     const percentage =
       Math.max(
         0,
         Math.min(
           100,
-          rawProgress * 125
+          raw * 135
         )
       );
 
-    lifecycleProgress.style.width =
-      `${percentage}%`;
+
+    lifecycleProgress
+      .style
+      .width =
+        `${percentage}%`;
 
 
     lifecycleSteps.forEach(
       (step, index) => {
-        const trigger =
+
+        const stepTrigger =
           (
             (
               index + 0.5
@@ -514,26 +452,122 @@
             /
             lifecycleSteps.length
           )
-          * 100;
+          *
+          100;
+
 
         step.classList.toggle(
-          'active',
-          percentage >= trigger
+          "active",
+          percentage >= stepTrigger
         );
+
       }
     );
-  };
+
+  }
 
 
-  const updateScrollAnimations = () => {
-    updateTimeline();
-    updateLifecycle();
-  };
 
+  /* =====================================
+     ACTIVE NAV
+  ====================================== */
+
+  const navLinks =
+    document.querySelectorAll(
+      ".nav a"
+    );
+
+
+  const navSections =
+    [
+      ...navLinks
+    ]
+      .map(
+        (link) => {
+
+          return document
+            .querySelector(
+              link.getAttribute(
+                "href"
+              )
+            );
+
+        }
+      )
+      .filter(Boolean);
+
+
+  if (
+    "IntersectionObserver"
+    in window
+  ) {
+
+    const navObserver =
+      new IntersectionObserver(
+
+        (entries) => {
+
+          entries.forEach(
+            (entry) => {
+
+              if (
+                !entry.isIntersecting
+              ) {
+                return;
+              }
+
+
+              navLinks.forEach(
+                (link) => {
+
+                  link.classList.remove(
+                    "active"
+                  );
+
+                }
+              );
+
+
+              document
+                .querySelector(
+                  `.nav a[href="#${entry.target.id}"]`
+                )
+                ?.classList
+                .add("active");
+
+            }
+          );
+
+        },
+
+        {
+          threshold: 0.3
+        }
+
+      );
+
+
+    navSections.forEach(
+      (section) => {
+
+        navObserver.observe(
+          section
+        );
+
+      }
+    );
+
+  }
+
+
+
+  /* =====================================
+     SCROLL
+  ====================================== */
 
   window.addEventListener(
-    'scroll',
-    updateScrollAnimations,
+    "scroll",
+    updateLifecycle,
     {
       passive: true
     }
@@ -541,10 +575,11 @@
 
 
   window.addEventListener(
-    'resize',
-    updateScrollAnimations
+    "resize",
+    updateLifecycle
   );
 
 
-  updateScrollAnimations();
+  updateLifecycle();
+
 })();
