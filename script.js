@@ -1,8 +1,50 @@
 (() => {
 
-  /* =========================================
-     HERO DYNAMIC TEXT
-  ========================================== */
+  /* ==================================
+     FALLBACK PARA LOGOS
+  ================================== */
+
+  window.techFallback =
+    function (image, text) {
+
+      const parent =
+        image.parentElement;
+
+      if (!parent) {
+        return;
+      }
+
+      image.remove();
+
+      const fallback =
+        document.createElement("span");
+
+      fallback.className =
+        "tech-fallback";
+
+      fallback.textContent =
+        text;
+
+      fallback.style.fontSize =
+        "9px";
+
+      fallback.style.fontWeight =
+        "800";
+
+      fallback.style.color =
+        "#34d6c7";
+
+      parent.appendChild(
+        fallback
+      );
+
+    };
+
+
+
+  /* ==================================
+     HERO WORDS
+  ================================== */
 
   const dynamicWord =
     document.getElementById(
@@ -21,69 +63,74 @@
   ];
 
 
-  let wordIndex = 0;
+  let index = 0;
 
 
   if (dynamicWord) {
 
     setInterval(() => {
 
-      dynamicWord.classList.add(
-        "changing"
-      );
+      dynamicWord
+        .classList
+        .add("changing");
 
 
       setTimeout(() => {
 
-        wordIndex =
-          (wordIndex + 1)
+        index =
+          (index + 1)
           % words.length;
 
 
         dynamicWord.textContent =
-          words[wordIndex];
+          words[index];
 
 
-        dynamicWord.classList.remove(
-          "changing"
-        );
+        dynamicWord
+          .classList
+          .remove("changing");
 
-      }, 240);
+      }, 220);
 
-    }, 2800);
+    }, 2700);
 
   }
 
 
 
-  /* =========================================
-     REVEAL ON SCROLL
-  ========================================== */
+  /* ==================================
+     SCROLL REVEAL
+  ================================== */
 
-  const reveals =
+  const revealItems =
     document.querySelectorAll(
       ".reveal"
     );
 
 
-  if ("IntersectionObserver" in window) {
+  if (
+    "IntersectionObserver"
+    in window
+  ) {
 
-    reveals.forEach((item) => {
+    revealItems.forEach(
+      item => {
 
-      item.classList.add(
-        "reveal-ready"
-      );
+        item.classList.add(
+          "reveal-ready"
+        );
 
-    });
+      }
+    );
 
 
-    const observer =
+    const revealObserver =
       new IntersectionObserver(
 
-        (entries, obs) => {
+        (entries, observer) => {
 
           entries.forEach(
-            (entry) => {
+            entry => {
 
               if (
                 entry.isIntersecting
@@ -94,7 +141,7 @@
                   .add("visible");
 
 
-                obs.unobserve(
+                observer.unobserve(
                   entry.target
                 );
 
@@ -106,16 +153,18 @@
         },
 
         {
-          threshold: 0.1
+          threshold: .1
         }
 
       );
 
 
-    reveals.forEach(
-      (item) => {
+    revealItems.forEach(
+      item => {
 
-        observer.observe(item);
+        revealObserver.observe(
+          item
+        );
 
       }
     );
@@ -124,94 +173,87 @@
 
 
 
-  /* =========================================
+  /* ==================================
      PROJECT DETAILS
-  ========================================== */
+  ================================== */
 
-  const toggles =
-    document.querySelectorAll(
+  document
+    .querySelectorAll(
       ".case-toggle"
+    )
+    .forEach(
+      button => {
+
+        button.addEventListener(
+          "click",
+
+          () => {
+
+            const project =
+              button.closest(
+                ".featured-project"
+              );
+
+
+            const detail =
+              project?.querySelector(
+                ".case-detail"
+              );
+
+
+            if (!detail) {
+              return;
+            }
+
+
+            const expanded =
+              button.getAttribute(
+                "aria-expanded"
+              ) === "true";
+
+
+            button.setAttribute(
+              "aria-expanded",
+              String(!expanded)
+            );
+
+
+            detail.hidden =
+              expanded;
+
+          }
+        );
+
+      }
     );
 
 
-  toggles.forEach(
-    (toggle) => {
 
-      toggle.addEventListener(
-        "click",
+  /* ==================================
+     PROJECT TILT
+  ================================== */
 
-        () => {
-
-          const container =
-            toggle.closest(
-              ".case-card, .featured-project"
-            );
-
-
-          if (!container) {
-            return;
-          }
-
-
-          const detail =
-            container.querySelector(
-              ".case-detail"
-            );
-
-
-          if (!detail) {
-            return;
-          }
-
-
-          const expanded =
-            toggle.getAttribute(
-              "aria-expanded"
-            ) === "true";
-
-
-          toggle.setAttribute(
-            "aria-expanded",
-            String(!expanded)
-          );
-
-
-          detail.hidden =
-            expanded;
-
-        }
-      );
-
-    }
-  );
-
-
-
-  /* =========================================
-     SUBTLE TILT EFFECT
-  ========================================== */
-
-  const tiltCards =
+  const cards =
     document.querySelectorAll(
       ".tilt-card"
     );
 
 
-  const supportsHover =
+  const canHover =
     window.matchMedia(
       "(hover: hover)"
     ).matches;
 
 
-  if (supportsHover) {
+  if (canHover) {
 
-    tiltCards.forEach(
-      (card) => {
+    cards.forEach(
+      card => {
 
         card.addEventListener(
           "mousemove",
 
-          (event) => {
+          event => {
 
             const rect =
               card.getBoundingClientRect();
@@ -227,26 +269,18 @@
               - rect.top;
 
 
-            const centerX =
-              rect.width / 2;
-
-
-            const centerY =
-              rect.height / 2;
-
-
             const rotateY =
               (
-                (x - centerX)
-                / centerX
-              ) * 1.1;
+                x / rect.width
+                - .5
+              ) * 2;
 
 
             const rotateX =
               (
-                (centerY - y)
-                / centerY
-              ) * 1.1;
+                .5
+                - y / rect.height
+              ) * 2;
 
 
             card.style.transform =
@@ -281,80 +315,67 @@
 
 
 
-  /* =========================================
-     ACTIVE NAVIGATION
-  ========================================== */
+  /* ==================================
+     ACTIVE NAV
+  ================================== */
 
-  const navLinks =
+  const links =
     document.querySelectorAll(
       ".nav a"
     );
 
 
   const sections =
-    [...navLinks]
-
-      .map((link) => {
-
-        const id =
-          link.getAttribute(
-            "href"
-          );
-
-
-        return document.querySelector(
-          id
-        );
-
-      })
-
+    [...links]
+      .map(
+        link =>
+          document.querySelector(
+            link.getAttribute(
+              "href"
+            )
+          )
+      )
       .filter(Boolean);
 
 
   if (
-    sections.length
-    &&
-    "IntersectionObserver" in window
+    "IntersectionObserver"
+    in window
   ) {
 
-    const navObserver =
+    const navigationObserver =
       new IntersectionObserver(
 
-        (entries) => {
+        entries => {
 
           entries.forEach(
-            (entry) => {
+            entry => {
 
               if (
-                entry.isIntersecting
+                !entry.isIntersecting
               ) {
+                return;
+              }
 
-                navLinks.forEach(
-                  (link) => {
 
-                    link.classList.remove(
-                      "active"
-                    );
+              links.forEach(
+                link => {
 
-                  }
+                  link.classList
+                    .remove("active");
+
+                }
+              );
+
+
+              const active =
+                document.querySelector(
+                  `.nav a[href="#${entry.target.id}"]`
                 );
 
 
-                const active =
-                  document.querySelector(
-                    `.nav a[href="#${entry.target.id}"]`
-                  );
-
-
-                if (active) {
-
-                  active.classList.add(
-                    "active"
-                  );
-
-                }
-
-              }
+              active?.classList
+                .add("active");
 
             }
           );
@@ -362,22 +383,100 @@
         },
 
         {
-          threshold: 0.35
+          threshold: .35
         }
 
       );
 
 
     sections.forEach(
-      (section) => {
+      section => {
 
-        navObserver.observe(
-          section
-        );
+        navigationObserver
+          .observe(section);
 
       }
     );
 
   }
+
+
+
+  /* ==================================
+     EXPERIENCE LINE
+  ================================== */
+
+  const experience =
+    document.querySelector(
+      ".experience"
+    );
+
+
+  const experienceProgress =
+    document.querySelector(
+      ".experience-line span"
+    );
+
+
+  function updateExperienceLine() {
+
+    if (
+      !experience
+      ||
+      !experienceProgress
+    ) {
+      return;
+    }
+
+
+    const rect =
+      experience
+        .getBoundingClientRect();
+
+
+    const viewport =
+      window.innerHeight;
+
+
+    const start =
+      viewport * .75;
+
+
+    const total =
+      rect.height;
+
+
+    const travelled =
+      start - rect.top;
+
+
+    const percentage =
+      Math.min(
+        100,
+        Math.max(
+          0,
+          travelled / total * 130
+        )
+      );
+
+
+    experienceProgress
+      .style
+      .height =
+        `${percentage}%`;
+
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    updateExperienceLine,
+    {
+      passive: true
+    }
+  );
+
+
+  updateExperienceLine();
 
 })();
